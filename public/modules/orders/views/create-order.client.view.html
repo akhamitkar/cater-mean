@@ -1,0 +1,82 @@
+<section data-ng-controller="OrdersController">
+    <div class="page-header">
+        <h1>New Order</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="department">Department</label>
+				    <div class="controls">
+				       <section data-ng-controller="DeptsController" data-ng-init="find()">
+				        <select id="department" data-ng-model="department"  class="form-control" placeholder="Department" required
+				                                data-ng-options="dept.name for dept in depts" data-ng-href="#!/depts{{dept._id}}">
+				        </select>
+				        </section>
+				    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="datetimeofdelivery">Date/Time of Delivery</label>
+				    <div class="controls">
+				        <input type="text" data-ng-model="datetimeofdelivery" id="datetimeofdelivery" class="form-control" placeholder="Date/Time of Delivery" required>
+				    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="confroom">Conference Room</label>
+				    <div class="controls">
+				        <section data-ng-controller="ConfroomsController" data-ng-init="find()">
+				        <select id="confroom" data-ng-model="confroom"  class="form-control" placeholder="Conference Rooms" required
+				                                data-ng-options="confroom.name for confroom in confrooms" data-ng-href="#!/confrooms{{confroom._id}}">
+				        </select>
+				        </section>				    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="noofpeople">Number of People</label>
+				    <div class="controls">
+				        <input type="text" data-ng-model="noofpeople" id="noofpeople" class="form-control" placeholder="Number of People" required>
+				    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="caterers">Caterer</label>
+				    <div class="controls">
+				        <section data-ng-controller="CaterersController" data-ng-init="find()">
+										        <select id="caterer" data-ng-model="caterer"  class="form-control" placeholder="Caterer" required
+										                                data-ng-options="caterer.name for caterer in caterers" data-ng-href="#!/caterers{{caterer._id}}">
+										        </select>
+				        </section>
+				    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="foodallergy">Food Allergies</label>
+				    <div class="controls">
+				        <input type="text" data-ng-model="foodallergy" id="foodallergy" class="form-control" placeholder="Food Allergies" required>
+				    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="specialrequests">Special Requests</label>
+				    <div class="controls">
+				        <input type="text" data-ng-model="specialrequests" id="specialrequests" class="form-control" placeholder="Special Requests" required>
+				    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="creditcard">Credit Card</label>
+				    <div class="controls">
+				        <input type="text" data-ng-model="creditcard" id="creditcard" class="form-control" placeholder="Credit Card" required>
+				    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

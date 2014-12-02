@@ -1,0 +1,71 @@
+<section data-ng-controller="OrdersController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Order</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="order.name" id="name" class="form-control" placeholder="Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="department">Department</label>
+				    <div class="controls">
+				       <input type="text" data-ng-model="order.department" id="name" class="form-control" placeholder="Department" required>
+				    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="datetimeofdelivery">Date/Time of Delivery</label>
+				    <div class="controls">
+				        <input type="text" data-ng-model="order.datetimeofdelivery" id="datetimeofdelivery" class="form-control" placeholder="Date/Time of Delivery" required>
+				    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="confroom">Conference Room</label>
+				    <div class="controls">
+				        <input type="text" data-ng-model="order.confroom" id="confroom" class="form-control" placeholder="Conference Room" required>
+				    </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="noofpeople">Number of People</label>
+				    <div class="controls">
+				        <input type="text" data-ng-model="order.noofpeople" id="noofpeople" class="form-control" placeholder="Number of People" required>
+				        </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="caterers">Caterer</label>
+				    <div class="controls">
+				        <input type="text" data-ng-model="order.caterers" id="caterers" class="form-control" placeholder="Caterer" required>
+				        </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="foodallergies">Food Allergies</label>
+				    <div class="controls">
+				        <input type="text" data-ng-model="order.foodallergies" id="foodallergies" class="form-control" placeholder="Food Allergies" required>
+				        </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="specialrequests">Special Requests</label>
+				    <div class="controls">
+				        <input type="text" data-ng-model="order.specialrequests" id="specialrequests" class="form-control" placeholder="Special Requests" required>
+				        </div>
+                </div>
+                <div class="form-group">
+				    <label class="control-label" for="creditcard">Credit Card</label>
+				    <div class="controls">
+				         <input type="text" data-ng-model="order.creditcard" id="creditcard" class="form-control" placeholder="Credit Card" required>
+				         </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>
